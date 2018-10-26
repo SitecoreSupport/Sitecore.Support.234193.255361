@@ -837,6 +837,10 @@
                 return jQuery('<div/>').text(htmlSource).html();
             },
 
+            stripHtmlTags: function (html) {
+                return jQuery.parseHTML('<div>' + html + '</div>')[0].innerHTML;
+            },
+
             getUrlQueryStringValue: function(parameterName, doNotDecode) {
                 return this.getQueryStringValue(location.href, parameterName, doNotDecode);
             },
